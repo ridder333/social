@@ -43,6 +43,11 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'rules' => [
+                'user/<id:\d+>' => 'user/index',
+                'page/<page:\d+>' => 'site/index',
+                '/' => 'site/index',
+            ],
         ],
     ],
     'params' => $params,

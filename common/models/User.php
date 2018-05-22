@@ -12,6 +12,12 @@ use yii\web\IdentityInterface;
  *
  * @property integer $id
  * @property string $username
+ * @property string $firstname
+ * @property string $surname
+ * @property integer $sex_id
+ * @property string $birthday
+ * @property string $description
+ * @property integer $avatar_id
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
@@ -25,7 +31,8 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
-
+    const MAIN_PAGE_SIZE = 8;
+    const IMG_PATH = 'images/users/';
 
     /**
      * {@inheritdoc}
@@ -54,6 +61,22 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
+    }
+    
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImages()
+    {
+        return $this->hasMany(Image::className(), ['user_id' => 'id'])->orderBy(['id' => SORT_DESC]);
+    }
+    
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAvatar()
+    {
+        return $this->hasOne(Image::className(), ['id' => 'avatar_id']);
     }
 
     /**
