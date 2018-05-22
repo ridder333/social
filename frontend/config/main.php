@@ -45,6 +45,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'user/<id:\d+>' => 'user/index',
+                'message/<companionId:\d+>' => 'message/index',
                 'page/<page:\d+>' => 'site/index',
                 '/' => 'site/index',
             ],

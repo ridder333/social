@@ -230,6 +230,76 @@ a.desc:after {
     margin-top: 10px;
 }
 
+.message {
+    background: #dbedff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    width: 50%;
+    margin-right: 50%;
+    float: left;
+    color: #222;
+}
+
+.dialogs .message {
+    width: 100%;
+    margin-right: 0;
+}
+
+.dialogs .message:hover {
+    background: #b0cbe6;
+}
+
+.message-to {
+    background: #dae4f3;
+    margin-left: 50%;
+    margin-right: 0;
+    float: right;
+    text-align: right;
+}
+
+.dialogs .message-author {
+    color: #000;
+    font-weight: bold;
+}
+
+.message-author a {
+    color: #000;
+    font-weight: bold;
+}
+
+.message-author span {
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.message-date {
+    font-size: 10px;
+    color: #f90000;
+    margin-top: 10px;
+}
+
+.not-read {
+    background: #9e9a9a !important;
+}
+
+.form-message {
+    width: 50%;
+    text-align: right;
+    display: block;
+    padding: 2px;
+}
+
+.form-message textarea {
+    width: 100%;
+    display: block;
+    box-shadow: 0px 0px 5px #585858;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    height: 100px;
+}
+
 .show-more {
     text-align: center;
     margin-top: 20px;
@@ -237,6 +307,10 @@ a.desc:after {
 
 .btn-show-more {
     width: 250px;
+}
+
+#show-more-messages-button {
+    margin-bottom: 30px;
 }
 
 @media(max-width:767px) {
@@ -275,6 +349,15 @@ a.desc:after {
     .home .user-block {
         height: auto;
     }
+    
+    .message {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .form-message {
+        width: 100%;
+    }
 }
 
 .nav > li > form > button.logout:focus,
@@ -285,3 +368,4 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+

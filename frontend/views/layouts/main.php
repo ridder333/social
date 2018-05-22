@@ -43,6 +43,11 @@ AppAsset::register($this);
         $menuItems[] = ['label' => 'Авторизация', 'url' => ['/site/login']];
     } else {
         $menuItems[] = [
+            'label' => 'Мои сообщения', 
+            'url' => ['/dialog'], 
+            'active' => $this->context->route == 'dialog/index' || $this->context->route == 'message/index'
+        ];
+        $menuItems[] = [
             'label' => 'Мой профиль', 
             'url' => ['/profile/'], 
             'active' => $this->context->route == 'profile/index'
